@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const express = require('express');
+const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://Lidia:aga19gra@ds119258.mlab.com:19258/database-1');
@@ -161,4 +163,13 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
     .then(findMarkAndDelete)
     .then(findKennyAndDelete)
     .then(findBennyAndRemove)
-    .catch(console.log.bind(console))
+    .catch(console.log.bind(console));
+
+app.use(express.static('./'));
+app.get('/', function (req, res) {
+    res.sendFile('index.html');
+});
+
+app.listen(3000, function() {
+    console.log('Aplikacja nasłuchuje na http://localhost:3000');
+});
