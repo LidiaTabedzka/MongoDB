@@ -165,11 +165,11 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
     .then(findBennyAndRemove)
     .catch(console.log.bind(console));
 
+app.set('port', (process.env.PORT || 5000));
 app.use(express.static('./'));
 app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
-
-app.listen(3000, function() {
-    console.log('Aplikacja nasłuchuje na http://localhost:3000');
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
 });
