@@ -1,0 +1,15 @@
+include ./index.pug
+div
+    table.table.table-hover
+        thead
+            th.text-center Author
+            th.text-center Title
+            th.text-center Delete
+        tbody
+            for song in data
+                tr
+                    td #{song.author}
+                    td #{song.title}
+                    td.text-center
+                        a.glyphicon.glyphicon-remove(href="/remove/" + song.id)
+        

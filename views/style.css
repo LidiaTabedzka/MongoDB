@@ -1,0 +1,23 @@
+body {
+    background-color: aliceblue;
+}
+.buttons-div {
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid;
+    padding: 50px;
+}
+.table {
+    margin: 0 auto;
+    max-width: 800px;
+}
+.table a {
+    text-decoration: none;
+}
