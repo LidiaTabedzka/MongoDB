@@ -1,0 +1,9 @@
+include ./index.pug
+form(method="POST", action="/addsong")
+    div.form-group
+        label(for="author") Enter the author of the song:
+        input.form-control(type="text", name="author", placeholder="Author of the song")
+    div.form-group
+        label(for="title") Enter the title of the song:
+        input.form-control(type="text", name="title", placeholder="Title of the song")
+    button.btn.btn-primary(type="submit") Submit
